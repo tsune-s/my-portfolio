@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -11,6 +12,20 @@ export default function Home() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden border-4 border-blue-500"
+          >
+            <Image
+              src="/profile.jpg"
+              alt="プロフィール写真"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
           <motion.h1
             className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
           >
