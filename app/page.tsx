@@ -19,8 +19,8 @@ const reviews = [
   },
   {
     id: 3,
-    name: '木村薫',
-    role: 'ほげほげ株式会社 開発部長',
+    name: '木村薫様',
+    role: 'ほげほげ株式会社 PR部長',
     content: '技術的な課題に対して、迅速かつ的確な解決策を提案していただきました。',
     image: '/c.png'
   }
@@ -30,6 +30,11 @@ export default function Home() {
   const scrollToProfile = () => {
     const profileSection = document.getElementById('profile');
     profileSection?.scrollIntoView({ behavior: 'smooth' }); //smooth
+  };
+
+  const scrollToWorks = () => {
+    const worksSection = document.getElementById('works');
+    worksSection?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -93,10 +98,21 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              onClick={scrollToWorks}
               className="px-6 py-3 glass-effect rounded-lg transition-all duration-300"
             >
               作品一覧
             </motion.button>
+            <motion.a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeAFIMM-B5xvU4HRdeV5JdumBShLbuwgDWJOcXQLtLwMb-SKg/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg transition-all duration-300"
+            >
+              お問い合わせ
+            </motion.a>
           </motion.div>
         </motion.div>
 
@@ -197,6 +213,74 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </motion.section>
+
+        {/* 作品一覧セクション */}
+        <motion.section
+          id="works"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.8 }}
+          className="mt-24"
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">作品一覧</h2>
+          <div className="glass-effect p-8 rounded-xl max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 gap-8">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold mb-4">今日の運勢 🎍</h3>
+                <p className="text-gray-300 mb-6">
+                  シンプルで使いやすいおみくじアプリケーション。<br />
+                  毎日の運勢を気軽にチェックできます。<br />
+                  モダンなデザインと直感的なUIで、楽しく運勢を占えます。
+                </p>
+                <div className="flex flex-wrap gap-2 justify-center mb-6">
+                  <span className="px-3 py-1 bg-blue-500/20 rounded-full text-sm">Next.js</span>
+                  <span className="px-3 py-1 bg-blue-500/20 rounded-full text-sm">TypeScript</span>
+                  <span className="px-3 py-1 bg-blue-500/20 rounded-full text-sm">Tailwind CSS</span>
+                </div>
+              </div>
+              <div className="relative aspect-[16/9] rounded-lg overflow-hidden shadow-2xl mx-auto max-w-2xl">
+                <Image
+                  src="/omikuji-preview.png"
+                  alt="おみくじアプリのプレビュー"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center">
+                <motion.a
+                  href="https://www.omikuji.officetsune.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg text-lg font-semibold transition-all duration-300"
+                >
+                  おみくじを引く！
+                </motion.a>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
+        {/* お問い合わせセクション */}
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2 }}
+          className="mt-24 text-center"
+        >
+          <h2 className="text-3xl font-bold mb-8 gradient-text">お問い合わせ</h2>
+          <motion.a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSeAFIMM-B5xvU4HRdeV5JdumBShLbuwgDWJOcXQLtLwMb-SKg/viewform?usp=header"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-8 py-4 bg-blue-500 hover:bg-blue-600 rounded-lg text-lg font-semibold transition-all duration-300"
+          >
+            お問い合わせフォームへ
+          </motion.a>
         </motion.section>
       </div>
     </main>
