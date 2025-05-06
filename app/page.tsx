@@ -58,7 +58,7 @@ export default function Home() {
             className="relative w-48 h-48 mx-auto mb-8 rounded-full overflow-hidden gradient-border"
           >
             <Image
-              src="/profile.jpg"
+              src="/profile.png"
               alt="プロフィール写真"
               fill
               className="object-cover"
