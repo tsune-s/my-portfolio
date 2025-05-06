@@ -215,6 +215,56 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* サービス内容セクション */}
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.6 }}
+          className="mt-24"
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">サービス内容</h2>
+          <div className="glass-effect p-8 rounded-xl max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold mb-3">エクセル業務効率化</h3>
+                  <p className="text-gray-300">
+                    ・業務プロセスの自動化<br />
+                    ・データ入力・集計の効率化<br />
+                    ・マクロ開発・カスタマイズ
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">エクセル研修</h3>
+                  <p className="text-gray-300">
+                    ・初級から上級までのカスタマイズ研修<br />
+                    ・実務に即した実践的なトレーニング<br />
+                    ・VBAプログラミング講座
+                  </p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl font-bold mb-3">データ分析</h3>
+                  <p className="text-gray-300">
+                    ・ビジネスデータの可視化<br />
+                    ・統計分析・予測モデル構築<br />
+                    ・レポート作成支援
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold mb-3">システム開発</h3>
+                  <p className="text-gray-300">
+                    ・Webアプリケーション開発<br />
+                    ・業務システムの構築<br />
+                    ・API開発・インテグレーション
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* 作品一覧セクション */}
         <motion.section
           id="works"
