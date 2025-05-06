@@ -178,14 +178,14 @@ export default function Home() {
                     <span className="text-blue-400 mr-2">•</span>
                     <div>
                       <p className="font-semibold">2018年 - 2020年</p>
-                      <p className="text-gray-300">株式会社テック シニアエンジニア</p>
+                      <p className="text-gray-300">大手通信会社</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-400 mr-2">•</span>
                     <div>
                       <p className="font-semibold">2015年 - 2018年</p>
-                      <p className="text-gray-300">株式会社デベロップ エンジニア</p>
+                      <p className="text-gray-300">パッケージソフトウェア開発</p>
                     </div>
                   </li>
                 </ul>
