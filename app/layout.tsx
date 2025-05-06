@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "オフィスツネ",
+  title: "どもどもテスト環境です",
   description: "オフィスツネのポートフォリオサイトです。",
   icons: {
     icon: "/favicon.png",
