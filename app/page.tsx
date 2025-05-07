@@ -104,6 +104,16 @@ export default function Home() {
               作品一覧
             </motion.button>
             <motion.a
+              href="https://coconala.com/services/2041171?ref=top_histories&ref_kind=home&ref_no=1"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-lg transition-all duration-300"
+            >
+              ココナラで依頼する
+            </motion.a>
+            <motion.a
               href="https://docs.google.com/forms/d/e/1FAIpQLSeAFIMM-B5xvU4HRdeV5JdumBShLbuwgDWJOcXQLtLwMb-SKg/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
