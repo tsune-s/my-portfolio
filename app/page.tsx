@@ -184,7 +184,7 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* サービス紹介セクション - 位置を変更 */}
+        {/* サービス紹介セクション */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -240,6 +240,33 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
+            
+            {/* ドットナビゲーション */}
+            <div className="flex justify-center gap-2 mt-4">
+              {[0, 1, 2].map((index) => (
+                <button
+                  key={index}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    selectedIndex === index ? 'bg-blue-500' : 'bg-gray-400'
+                  }`}
+                  onClick={() => emblaApi?.scrollTo(index)}
+                />
+              ))}
+            </div>
+
+            {/* ココナラボタンを追加 */}
+            <div className="text-center mt-8">
+              <motion.a
+                href="https://coconala.com/services/2041171?ref=top_histories&ref_kind=home&ref_no=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="inline-block px-8 py-4 bg-green-500 hover:bg-green-600 rounded-lg text-lg font-semibold transition-all duration-300"
+              >
+                ココナラで依頼する
+              </motion.a>
+            </div>
           </div>
         </motion.section>
 
