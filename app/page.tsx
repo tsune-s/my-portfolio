@@ -1,6 +1,8 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import useEmblaCarousel from 'embla-carousel-react';
+import { useCallback } from 'react';
 
 const reviews = [
   {
@@ -27,6 +29,16 @@ const reviews = [
 ];
 
 export default function Home() {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
   const scrollToProfile = () => {
     const profileSection = document.getElementById('profile');
     profileSection?.scrollIntoView({ behavior: 'smooth' }); //smooth
@@ -341,6 +353,62 @@ export default function Home() {
           >
             お問い合わせフォームへ
           </motion.a>
+        </motion.section>
+
+        {/* カルーセルセクション */}
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-24"
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">サービス紹介</h2>
+          <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
+                  <Image
+                    src="/no1.png"
+                    alt="サービス紹介1"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
+                  <Image
+                    src="/no2.png"
+                    alt="サービス紹介2"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
+                  <Image
+                    src="/no3.png"
+                    alt="サービス紹介3"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
+              onClick={scrollPrev}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
+              onClick={scrollNext}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
         </motion.section>
       </div>
     </main>
