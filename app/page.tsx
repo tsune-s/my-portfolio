@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 const reviews = [
   {
@@ -30,6 +30,7 @@ const reviews = [
 
 export default function Home() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
@@ -37,6 +38,14 @@ export default function Home() {
 
   const scrollNext = useCallback(() => {
     if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    emblaApi.on('select', () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
+    });
   }, [emblaApi]);
 
   const scrollToProfile = () => {
@@ -408,6 +417,17 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
+          </div>
+          <div className="flex justify-center gap-2 mt-4">
+            {[0, 1, 2].map((index) => (
+              <button
+                key={index}
+                className={`w-2 h-2 rounded-full transition-colors ${
+                  selectedIndex === index ? 'bg-blue-500' : 'bg-gray-400'
+                }`}
+                onClick={() => emblaApi?.scrollTo(index)}
+              />
+            ))}
           </div>
         </motion.section>
       </div>
