@@ -184,6 +184,65 @@ export default function Home() {
           </div>
         </motion.section>
 
+        {/* サービス紹介セクション - 位置を変更 */}
+        <motion.section
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="mt-24"
+        >
+          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">サービス紹介</h2>
+          <div className="relative max-w-3xl mx-auto px-4">
+            <div className="overflow-hidden" ref={emblaRef}>
+              <div className="flex">
+                <div className="flex-[0_0_100%] min-w-0 relative h-[400px]">
+                  <Image
+                    src="/no1.png"
+                    alt="サービス紹介1"
+                    fill
+                    className="object-contain rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                  />
+                </div>
+                <div className="flex-[0_0_100%] min-w-0 relative h-[400px]">
+                  <Image
+                    src="/no2.png"
+                    alt="サービス紹介2"
+                    fill
+                    className="object-contain rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                  />
+                </div>
+                <div className="flex-[0_0_100%] min-w-0 relative h-[400px]">
+                  <Image
+                    src="/no3.png"
+                    alt="サービス紹介3"
+                    fill
+                    className="object-contain rounded-lg"
+                    sizes="(max-width: 768px) 100vw, 768px"
+                  />
+                </div>
+              </div>
+            </div>
+            <button
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-10"
+              onClick={scrollPrev}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full z-10"
+              onClick={scrollNext}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+        </motion.section>
+
         {/* プロフィールセクション */}
         <motion.section
           id="profile"
@@ -202,7 +261,7 @@ export default function Home() {
                     <span className="text-blue-400 mr-2">•</span>
                     <div>
                       <p className="font-semibold">2020年 - 現在</p>
-                      <p className="text-gray-300">フリーランスエンジニア</p>
+                      <p className="text-gray-300">フリーランスエンジニア（エクセル業務効率化）</p>
                     </div>
                   </li>
                   <li className="flex items-start">
@@ -362,73 +421,6 @@ export default function Home() {
           >
             お問い合わせフォームへ
           </motion.a>
-        </motion.section>
-
-        {/* カルーセルセクション */}
-        <motion.section
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="mt-24"
-        >
-          <h2 className="text-3xl font-bold text-center mb-12 gradient-text">サービス紹介</h2>
-          <div className="relative max-w-4xl mx-auto">
-            <div className="overflow-hidden" ref={emblaRef}>
-              <div className="flex">
-                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
-                  <Image
-                    src="/no1.png"
-                    alt="サービス紹介1"
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
-                  <Image
-                    src="/no2.png"
-                    alt="サービス紹介2"
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <div className="flex-[0_0_100%] min-w-0 relative aspect-[16/9]">
-                  <Image
-                    src="/no3.png"
-                    alt="サービス紹介3"
-                    fill
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-            </div>
-            <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
-              onClick={scrollPrev}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-            <button
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full"
-              onClick={scrollNext}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-          </div>
-          <div className="flex justify-center gap-2 mt-4">
-            {[0, 1, 2].map((index) => (
-              <button
-                key={index}
-                className={`w-2 h-2 rounded-full transition-colors ${
-                  selectedIndex === index ? 'bg-blue-500' : 'bg-gray-400'
-                }`}
-                onClick={() => emblaApi?.scrollTo(index)}
-              />
-            ))}
-          </div>
         </motion.section>
       </div>
     </main>
