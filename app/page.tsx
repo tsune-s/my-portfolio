@@ -100,7 +100,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-4x1 md:text-2xl text-blue-500 mb-8"
           >
-            ポートフォリオサイトへようこそ
+            ポートフォリオサイトへようこそ！
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

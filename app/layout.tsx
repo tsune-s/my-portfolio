@@ -13,8 +13,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "オフィスツネ",
-  description: "オフィスツネのポートフォリオサイトです。",
+  title: "オフィスツネ | ポートフォリオ",
+  description: "オフィスツネのポートフォリオサイトです。Web開発、デザイン、その他のプロジェクト作品を紹介しています。",
+  keywords: ["ポートフォリオ", "Web開発","エクセル", "デザイン", "オフィスツネ"],
+  authors: [{ name: "オフィスツネ" }],
+  openGraph: {
+    title: "オフィスツネ | ポートフォリオ",
+    description: "オフィスツネのポートフォリオサイトです。Web開発、デザイン、その他のプロジェクト作品を紹介しています。",
+    type: "website",
+    locale: "ja_JP",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "オフィスツネ | ポートフォリオ",
+    description: "オフィスツネのポートフォリオサイトです。Web開発、デザイン、その他のプロジェクト作品を紹介しています。",
+  },
   icons: {
     icon: "/favicon.png",
   },
